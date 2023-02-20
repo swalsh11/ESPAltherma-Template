@@ -1,0 +1,213 @@
+#template: !include template.yaml #in configuration.yaml
+  - sensor: 
+      - name: "Outdoor air temp."
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Outdoor air temp.') }}"
+      - name: "Outdoor heat exchanger temp."
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Outdoor heat exchanger temp.') }}"
+      - name: "Discharge pipe temp."
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Discharge pipe temp.') }}"
+      - name: "Suction pipe temp."
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Suction pipe temp.') }}"
+      - name: "Outdoor heat exchanger mid temp."
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Outdoor heat exchanger mid temp.') }}"
+      - name: "Low Pressure"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Low Pressure') }}"
+      - name: "DHW setpoint"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'DHW setpoint') }}"
+      - name: "LW setpoint (main)"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'LW setpoint (main)') }}"
+      - name: "Outlet PHE(R1T)"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Outlet PHE(R1T)') }}"
+      - name: "Outlet BUH(R2T)"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Outlet BUH(R2T)') }}"
+      - name: "R32 Liquid temperature(R3T)"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'R32 Liquid temperature(R3T)') }}"
+      - name: "Inlet temperature(R4T)"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Inlet temperature(R4T)') }}"
+      - name: "DHW temperature(R5T)"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'DHW temperature(R5T)') }}"
+      - name: "Remocon thermistor"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Remocon thermistor') }}"
+      - name: "Discharge Temp Drop"
+        unit_of_measurement: '°C'
+        device_class: temperature
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'discharge Temp Drop') }}"
+      - name: "INV primary current (A)"
+        unit_of_measurement: 'A'
+        device_class: current
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'INV primary current (A)') }}"
+      - name: "INV secondary current (A)"
+        unit_of_measurement: 'A'
+        device_class: current
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'INV secondary current (A)') }}"
+      - name: "Pressure"
+        unit_of_measurement: 'BAR'
+        device_class: pressure
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Pressure') }}"
+      - name: "Voltage (V)"
+        unit_of_measurement: 'V'
+        device_class: voltage
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Voltage (V)') }}"
+      - name: "Voltage (N-phase) (V)"
+        unit_of_measurement: 'V'
+        device_class: voltage
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Voltage (N-phase) (V)') }}"
+      - name: "Flow sensor (l/min)"
+        unit_of_measurement: 'L/min'
+        device_class: enum
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Flow sensor (l/min)') }}"
+      - name: "Fan 1 (step)"
+        unit_of_measurement: 'RPM'
+        device_class: enum
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Fan 1 (step)') }}"
+      - name: "Water pump signal (0:max-100:stop)"
+        unit_of_measurement: 'RPM'
+        device_class: enum
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Water pump signal (0:max-100:stop)') }}"
+      - name: "INV frequency 1 (rps)"
+        unit_of_measurement: 'Hz'
+        device_class: enum
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'INV frequency 1 (rps)') }}"
+      - name: "INV frequency 2 (rps)"
+        unit_of_measurement: 'Hz'
+        device_class: enum
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'INV frequency 2 (rps)') }}"
+      - name: "Operation Mode"
+        device_class: enum
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Operation Mode') }}"
+      - name: "Error Code"
+        device_class: enum
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Error Code') }}"
+      - name: "Error detailed code"
+        device_class: enum
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Error detailed code') }}"
+      - name: "Error type"
+        device_class: enum
+        state_class: measurement
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Error type') }}"
+      - name: "COP"
+        device_class: enum
+        state_class: measurement
+        state: >
+           "{% if is_state_attr('sensor.althermasensors','Operation Mode', 'Heating') and is_state_attr('sensor.althermasensors','Freeze Protection', 'OFF')  %} 
+            {{ ((state_attr('sensor.althermasensors','Flow sensor (l/min)')| float * 0.06 * 1.16 * (state_attr('sensor.althermasensors','Outlet PHE(R1T)') | float - state_attr('sensor.althermasensors','Inlet temperature(R4T)')|float) )
+            /
+            (state_attr('sensor.althermasensors','INV secondary current (A)') | float * state_attr('sensor.althermasensors','Voltage (N-phase) (V)')|float / 1000))
+            |round(2)
+            }}
+            {% else %} 0.0 {%endif%}"
+
+  - binary_sensor:
+      - name: "Thermostat ON/OFF"
+        device_class: power
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Thermostat ON/OFF') }}"
+      - name: "Thermostat2 ON/OFF"
+        device_class: power
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Thermostat2 ON/OFF') }}"
+      - name: "Water flow switch"
+        device_class: power
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Water flow switch') }}"
+      - name: "Pump Output"
+        device_class: power
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Pump Output') }}"
+      - name: "3way valve(On:DHW_Off:Space)"
+        device_class: power
+        state: >
+            {{ state_attr('sensor.althermasensors', '3way valve(On:DHW_Off:Space)') }}"
+      - name: "Freeze Protection"
+        device_class: power
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Freeze Protection') }}"
+      - name: "Defrost Operation"
+        device_class: power
+        state: >
+            {{ state_attr('sensor.althermasensors', 'Defrost Operation') }}"
