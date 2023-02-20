@@ -1,4 +1,4 @@
-# ESPAltherma-Template for Dailin Altherma 3M Monoblock EBLA09-16DA
+# ESPAltherma-Template for Daikin Altherma 3M Monoblock EBLA09-16DA / EDLA09-16DA
 
 You need this First:
 https://github.com/raomin/ESPAltherma
