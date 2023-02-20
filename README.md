@@ -1,6 +1,10 @@
-# ESPAltherma-Template
-Template.yam that defines sensors from Default Configuration 
+# ESPAltherma-Template for Dailin Altherma 3M Monoblock EBLA09-16DA
 
+You need this First:
+https://github.com/raomin/ESPAltherma
+
+
+from here, Download Template.yaml this defines sensors from Default.h Configuration also here. 
 
 Insert this line into configuration.yaml
 
