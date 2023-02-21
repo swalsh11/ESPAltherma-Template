@@ -1,5 +1,5 @@
 #template: !include template.yaml #in configuration.yaml
-  - sensor: 
+  - sensor: # this line is needed only once
       - name: "Outdoor air temp."
         unique_id:  "Outdoor air temp."
         unit_of_measurement: '°C'
@@ -212,6 +212,26 @@
             (state_attr('sensor.althermasensors','INV secondary current (A)') | float * state_attr('sensor.althermasensors','Voltage (N-phase) (V)')|float / 1000))
             |round(2) }}
             {% else %} 0.0 {%endif%}
+      - name: "ΔT Q"
+        unique_id: "ΔT Q"
+        state_class: measurement
+        icon: mdi:thermometer-plus
+        state: >
+            {{ ( ((state_attr('sensor.althermasensors','Outlet PHE(R1T)') | float - state_attr('sensor.althermasensors','Inlet temperature(R4T)')|float) ) )
+            |round(2) }}
+      - name: "KW Q Heating"
+        unique_id: "KW Q heating"
+        state_class: measurement
+        #device_class: power
+        icon: mdi:radiator
+        #ΔQ = m° Cp ΔT.
+        #ΔQ = Rate of heat transfer (kW)
+        #m° = Mass flow rate (kg/s or LPS)
+        #ΔT = Temperature difference in Kelvin
+        #Cp = Specific heat at constant pressure (kJ/kg K) 4.184 J⋅kg−1⋅K−1.
+        state: >
+            {{ (state_attr('sensor.althermasensors','Flow sensor (l/min)')/60 | float * 4.184 * ((state_attr('sensor.althermasensors','Outlet PHE(R1T)') | float - state_attr('sensor.althermasensors','Inlet temperature(R4T)')|float) ) )
+            |round(2) }}
 
   - binary_sensor:
       - name: "Thermostat ON/OFF"
@@ -243,7 +263,7 @@
         device_class: power
         icon: mdi:valve
         state: >
-            {{ state_attr('sensor.althermasensors', '3way valve(On:DHW_Off:Space)') }}
+            {{ 'DHW' if is_state_attr('sensor.althermasensors','3way valve', 'ON') else 'Space' }}
       - name: "Freeze Protection"
         unique_id: "Freeze Protection"
         icon: mdi:snowflake-alert
@@ -256,5 +276,3 @@
         device_class: power
         state: >
             {{ state_attr('sensor.althermasensors', 'Defrost Operation') }}
- 
-
